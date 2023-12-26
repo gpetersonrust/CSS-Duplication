@@ -1,4 +1,5 @@
 const fs = require('fs');
+let dirname = __dirname;
 
 class MoxcarCssProcessor {
     constructor(cssFilePath) {
@@ -197,10 +198,10 @@ class MoxcarCssProcessor {
         return `    ${selector} {\n    ${rulesCss}\n    }`;
     }
 }
-
+let css_path = dirname + '/style.css';
 // Usage
-const moxcarCssProcessorInstance = new MoxcarCssProcessor('/Users/ginopeterson/Desktop/CSS Duplication/style.css');
+const moxcarCssProcessorInstance = new MoxcarCssProcessor( css_path );
 moxcarCssProcessorInstance.processCss();
 moxcarCssProcessorInstance.writeModifiedCssToFile();
 
-// console.log(moxcarCssProcessorInstance.classes);
+ 
